@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Osoby CRUD</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .card{
+                border-radius: 12px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+                margin-bottom: 20px; 
+                padding: 12px; 
+                width: 600px;
+            }
+            .bigcard{
+                border-radius: 8; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 5px 5px 0 rgba(0, 0, 0, 0.19); 
+                margin-bottom: 20px; 
+                margin-top: 20px; 
+                padding: 20px; 
+                padding-top: 5px;
+                width: 650px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <h1 class="text-center"> CRUD </h1>
+        <div class="row">
+
+            <div >
+                <h2>Create</h2>
+                <form method="POST" action="/osoba/create">
+                    <div class="input-group form-group">
+                        <input type="text" placeholder="name" name="name" class="form-control">
+                        <input type="text" placeholder="surname" name="surname" class="form-control">
+                    </div>
+                    <div>
+                        <span class="input-group-btn">
+                            <input class="btn btn-success" type="submit" value="create" />
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="bigcard">
+                <h2>List</h2>
+                #for(osoba in Osoby):
+                <div class="card">
+                    <div  class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input type="text" name="id" class="form-control" value="#(osoba.id)" disabled style="margin-top: 5px">
+                                <input type="text" name="name" class="form-control" value="#(osoba.name)" disabled style="margin-top: 5px">
+                                <input type="text" name="surname" class="form-control" value="#(osoba.surname)" disabled style="margin-top: 5px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                #endfor
+            </div>
+            <div class="bigcard">
+                <h2>Update</h2>
+                #for(osoba in Osoby):
+                <div class="card">
+                    <form style="margin-bottom: 5px;" method="POST" action="/osoba/update/#(osoba.id)">
+                        <div class="input-group form-group">
+                            <input type="text" name="id" class="form-control" value="#(osoba.id)" disabled>
+                            <input type="text" name="name" class="form-control" value="#(osoba.name)">
+                            <input type="text" name="surname" class="form-control" value="#(osoba.surname)">
+                        </div>
+                        <div class="mb-2">
+                            <span class="input-group-btn">
+                                <input class="btn btn-primary" type="submit" value="update" />
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                #endfor
+            </div>
+            <div class="bigcard">
+                <h2>Delete</h2>
+                #for(osoba in Osoby):
+                <div class="card">
+                    <form style="margin-bottom: 5px;" method="POST" action="/osoba/delete/#(osoba.id)">
+                        <div class="form-group input-group">
+                            <input type="text" name="id" class="form-control" value="#(osoba.id)" disabled>
+                            <input type="text" name="name" class="form-control" value="#(osoba.name)" disabled>
+                            <input type="text" name="surname" class="form-control" value="#(osoba.surname)" disabled>
+                        </div>
+                        <div>
+                            <span class="input-group-btn">
+                                <input class="btn btn-danger" type="submit" value="delete" />
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                #endfor
+            </div>
+        </div>
+    </body>
+</html>

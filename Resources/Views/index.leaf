@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+          <style>
+            .card{
+                border-radius: 12px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+                margin-bottom: 20px; 
+                padding: 12px; 
+                width: 600px;
+            }
+            .bigcard{
+                border-radius: 8; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 5px 5px 5px 0 rgba(0, 0, 0, 0.19); 
+                margin-bottom: 20px; 
+                margin-top: 20px; 
+                padding: 20px; 
+                padding-top: 5px;
+                width: 650px;
+            }
+        </style>
+  <title>#(title)</title>
+</head>
+
+<body>
+  <div class="bigcard">
+    <h1>CRUD</h1>
+    <form style="margin-bottom: 5px;" method="GET" action="/osoby">
+      <input class="btn btn-success" type="submit" value="Osoby" style="width:200px; height:40px; margin-right:10px" action="/osoby"/>
+    </form>
+    <form style="margin-bottom: 5px;" method="GET" action="/pracownicy">
+      <input class="btn btn-success" type="submit" value="Pracownicy" style="width:200px; height:40px; margin-right:10px"/>
+    </form>
+    <form style="margin-bottom: 5px;" method="GET" action="/towary">
+      <input class="btn btn-success" type="submit" value="Towary" style="width:200px; height:40px; margin-right:10px"/>
+    </form>
+  </div>
+  
+</body>
+</html>
